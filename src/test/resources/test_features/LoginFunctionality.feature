@@ -1,4 +1,4 @@
-@Smoke @Regression
+@Regression
 Feature: Validate Login For Tek Insurance Application
 
   @UserStory_3
