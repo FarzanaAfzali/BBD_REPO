@@ -1,3 +1,4 @@
+@Smoke
 Feature: Validate Plan Section
 
   Background: Login

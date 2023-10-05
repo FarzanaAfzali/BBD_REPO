@@ -2,6 +2,7 @@ package tek.bdd.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -37,7 +38,13 @@ public class BaseSetUp {
         String browserType = properties.getProperty("ui.browser.type");
 
         if (browserType.equalsIgnoreCase("chrome")){//equalsIgnoreCase compare two string ignoring lower and upper cases
-            driver = new ChromeDriver();
+            // for making the test happen in linux machine we have to open the browser
+            // in the headless mode. so we have to instantiate the chrome options and
+            // pass to the chrome constructor while instantiating Chrome.
+            // HEADLESS MODE is when browser open and it is not visible. used in linux machines mostly.
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
         } else if (browserType.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
         } else if (browserType.equalsIgnoreCase("firefox")){

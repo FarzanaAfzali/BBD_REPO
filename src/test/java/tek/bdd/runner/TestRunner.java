@@ -11,10 +11,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "classpath:test_features",// the path for features: classpath is standard for java
         glue = "tek.bdd.steps",// the path for steps, if left it will loop up all the packages
-        tags = "@UserStory_7",// it looks for which tags, if left empty it will run all features
+        tags = "@Smoke",// it looks for which tags, if left empty it will run all features
         plugin = {
                 "html:target/html_report/report.html"// this will provide a report.
         }
 )
 public class TestRunner {
+
 }
