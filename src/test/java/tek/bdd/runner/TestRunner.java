@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
         glue = "tek.bdd.steps",// the path for steps, if left it will loop up all the packages
         tags = "@Smoke",// it looks for which tags, if left empty it will run all features
         plugin = {
-                "html:target/html_report/report.html"// this will provide a report.
+                "html:target/html_report/report.html",// this will provide a report.
+                "json:target/jsonReports/report.json"
         }
 )
 public class TestRunner {
